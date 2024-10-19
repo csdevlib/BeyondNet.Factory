@@ -5,13 +5,13 @@ namespace BeyondNet.Factory.Impl
 {
     public class Factory : IFactory
     {
-        public IFactoryRecordSetupProvider ConfigurationProvider { get; }
+        public IFactorySetupProvider ConfigurationProvider { get; }
 
         public IFactoryInterceptor Interceptor { get; set; }
 
         public IFactoryCreator Creator { get; }
 
-        public Factory(IFactoryRecordSetupProvider factoryConfigurationProvider, IFactoryCreator factoryCreator)
+        public Factory(IFactorySetupProvider factoryConfigurationProvider, IFactoryCreator factoryCreator)
         {
             ArgumentNullException.ThrowIfNull(factoryConfigurationProvider, nameof(factoryConfigurationProvider));
             ArgumentNullException.ThrowIfNull(factoryCreator, nameof(factoryCreator));
@@ -28,7 +28,7 @@ namespace BeyondNet.Factory.Impl
             return Create<TTarget, TService>(instance, string.Empty);
         }
 
-        public RecordSetupItem[] ConfigurationFor<TTarget, TService>(TTarget target) where TService : class
+        public SetupItem[] ConfigurationFor<TTarget, TService>(TTarget target) where TService : class
         {
             return ConfigurationFor<TTarget, TService>(target, string.Empty);
         }
@@ -59,7 +59,7 @@ namespace BeyondNet.Factory.Impl
             return list;
         }
 
-        public RecordSetupItem[] ConfigurationFor<TTarget, TService>(TTarget target, string name) where TService : class
+        public SetupItem[] ConfigurationFor<TTarget, TService>(TTarget target, string name) where TService : class
         {
             return ConfigurationProvider.Provide<TTarget, TService>(target, name);
         }

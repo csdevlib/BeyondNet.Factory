@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Factory.Installer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Factory.Test", "BeyondNet.Factory.Test\BeyondNet.Factory.Test.csproj", "{A107D71D-E155-467F-9640-1F5FD13EBC49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondNet.Factory.Demo", "BeyondNet.Factory.Demo\BeyondNet.Factory.Demo.csproj", "{399BEC11-6EF4-4DC0-BA60-43A9A2C1CB63}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondNet.Factory.Demo", "BeyondNet.Factory.Demo\BeyondNet.Factory.Demo.csproj", "{399BEC11-6EF4-4DC0-BA60-43A9A2C1CB63}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -11,6 +11,6 @@
             where TImplementation : class, TService;
 
         IFactoryBuilder AddSource<TImplementation>()
-            where TImplementation : class, IFactoryRecordSetupSource;
+            where TImplementation : class, IFactorySetupSource;
     }
 }

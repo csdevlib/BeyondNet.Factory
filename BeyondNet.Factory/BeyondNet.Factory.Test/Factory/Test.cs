@@ -1,5 +1,4 @@
 ﻿using BeyondNet.Tests.Factory.Test.Impl;
-using Locator = BeyondNet.ServiceLocator.Impl;
 using BeyondNet.Tests.Factory.Test.Interfaces;
 using BeyondNet.Factory.Impl;
 using BeyondNet.Factory.Interfaces;
@@ -15,13 +14,13 @@ namespace BeyondNet.Tests.Factory.Test
         {
             var tests = new TestCases();
 
-            var locator = new Locator.ServiceLocator();
+            var locator = new ServiceLocator();
 
             locator.Register(typeof(IDoSomething), new DoSomething(), typeof(DoSomething).FullName);
 
             var config = new FactoryRecordSetupSource();
 
-            var factory = new BeyondNet.Factory.Impl.Factory (new FactoryRecordSetupProvider(new IFactoryRecordSetupSource[] { (IFactoryRecordSetupSource)config }), new FactoryCreator(locator));
+            var factory = new BeyondNet.Factory.Impl.Factory (new FactorySetupProvider(new IFactorySetupSource[] { (IFactorySetupSource)config }), new FactoryCreator(locator));
 
             tests.CreateWithConsultantOlderThan25ShouldBeNotEmpty(factory);
         }

@@ -2,8 +2,8 @@
 
 namespace BeyondNet.Factory.Interfaces
 {
-    public interface IFactoryRecordSetupSource
+    public interface IFactorySetupSource
     {
-        RecordSetup Source();
+        Setup Source();
     }
 }

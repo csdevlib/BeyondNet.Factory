@@ -3,11 +3,11 @@ using BeyondNet.Factory.Model;
 
 namespace BeyondNet.Factory
 {
-    public class FactoryRecordSetupWhenBuilder<TTarget> : IFactoryRecordSetupWhenBuilder<TTarget>
+    public class FactorySetupWhenBuilder<TTarget> : IFactoryRecordSetupWhenBuilder<TTarget>
     {
-        private readonly RecordSetupItem _item;
+        private readonly SetupItem _item;
 
-        public FactoryRecordSetupWhenBuilder(RecordSetupItem item)
+        public FactorySetupWhenBuilder(SetupItem item)
         {
             _item = item;
         }

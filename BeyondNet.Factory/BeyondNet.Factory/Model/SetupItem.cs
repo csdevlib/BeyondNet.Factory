@@ -1,9 +1,8 @@
-
 namespace BeyondNet.Factory.Model
 {
-    public class RecordSetupItem
+    public class SetupItem
     {
-        public RecordSetupItem(Type target, Type implementation, Type service, string name, object selector)
+        public SetupItem(Type target, Type? implementation, Type service, string name, object? selector)
         {
             Name = name;
 
@@ -16,13 +15,13 @@ namespace BeyondNet.Factory.Model
             ServiceType = service;
         }
 
-        public RecordSetupItem(Type target, Type implementation, Type service, string name)
+        public SetupItem(Type target, Type? implementation, Type service, string name)
         : this(target, implementation, service, name, null)
             {
 
             }
 
-        public RecordSetupItem(Type target, Type service, string name)
+        public SetupItem(Type target, Type service, string name)
             : this(target, null, service, name)
         {
 
@@ -32,10 +31,10 @@ namespace BeyondNet.Factory.Model
 
         public Type TargetType { get; }
 
-        public Type ImplementationType { get; set; }
+        public Type? ImplementationType { get; set; }
 
         public Type ServiceType { get; }
 
-        public object Selector { get; set; }
+        public object? Selector { get; set; }
     }
 }

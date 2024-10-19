@@ -2,7 +2,7 @@
 
 namespace BeyondNet.Tests.Factory.Test.Impl
 {
-    public class EmptyFactoryRecordSetupSource : AbstractFactoryRecordSetupSource
+    public class EmptyFactoryRecordSetupSource : AbstractFactorySetupSource
     {
         public EmptyFactoryRecordSetupSource()
         {

@@ -8,22 +8,22 @@ namespace BeyondNet.Factory.Impl
 
         public virtual void OnEntry<TTarget>(TTarget target, string name)
         {
-
+        
         }
 
         public virtual void OnSuccess<TTarget, TService>(TTarget target, string name, IList<TService> services)
         {
-
+        
         }
 
         public virtual void OnError<TTarget, TService>(TTarget target, string name, IList<TService> services, Exception exception)
         {
-
+        
         }
 
         public virtual void OnExit<TTarget, TService>(TTarget target, string name, IList<TService> services)
         {
-
+        
         }
     }
 }

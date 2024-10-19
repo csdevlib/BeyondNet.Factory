@@ -8,8 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BeyondNet.Factory" Version="1.0.0" />
-    <PackageReference Include="BeyondNet.Factory.Installer" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BeyondNet.Factory.Installer\BeyondNet.Factory.Installer.csproj" />
+    <ProjectReference Include="..\BeyondNet.Factory\BeyondNet.Factory.csproj" />
   </ItemGroup>
 
 </Project>

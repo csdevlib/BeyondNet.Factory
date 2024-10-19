@@ -3,11 +3,11 @@ using BeyondNet.Factory.Model;
 
 namespace BeyondNet.Factory.Fluent.Impl
 {
-    public class FactoryRecordSetupCreateBuilder<TTarget, TService> : IFactoryRecordSetupCreateBuilder<TTarget, TService>
+    public class FactorySetupCreateBuilder<TTarget, TService> : IFactoryRecordSetupCreateBuilder<TTarget, TService>
     {
-        private readonly RecordSetupItem _item;
+        private readonly SetupItem _item;
 
-        public FactoryRecordSetupCreateBuilder(RecordSetupItem item)
+        public FactorySetupCreateBuilder(SetupItem item)
         {
             _item = item;
         }
@@ -16,7 +16,7 @@ namespace BeyondNet.Factory.Fluent.Impl
         {
             _item.ImplementationType = typeof(TImplementation);
 
-            return new FactoryRecordSetupWhenBuilder<TTarget>(_item);
+            return new FactorySetupWhenBuilder<TTarget>(_item);
         }
 
     }

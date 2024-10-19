@@ -1,17 +1,20 @@
-﻿using BeyondNet.Factory.Installer;
-using BeyondNet.Factory.Demo.Bootstrapper;
+﻿using BeyondNet.Factory.Demo.Bootstrapper;
 using BeyondNet.Factory.Demo.Impl;
 using BeyondNet.Factory.Demo.Interfaces;
 using BeyondNet.Factory.Demo.Models;
-using LightInject;
 using System.Text.Json;
+using Microsoft.Extensions.DependencyInjection;
+using BeyondNet.Factory.Installer.Extensions;
+using BeyondNet.Factory.Interfaces;
 
 
-var container = new ServiceContainer();
+ServiceProvider? serviceProvider;
+
+var serviceCollection = new ServiceCollection();
 
 var setup = new LogicModelFactoryRecordSetup();
 
-container.AddFactory(c =>
+serviceCollection.AddFactory(c =>
 {
     c.AddSource<LogicModelFactoryRecordSetup>();
     c.AddSingleton<ILogicModelLoader, LogicModelCATLoader>();
@@ -19,7 +22,9 @@ container.AddFactory(c =>
     c.AddSingleton<ILogicModelLoader, LogicModelREVLoader>();
 });
 
-var factory = container.GetFactory();
+serviceProvider = serviceCollection.BuildServiceProvider();
+
+var factory = serviceProvider.GetService<IFactory>();
 
 var strategyBuilder = new StrategyBuilder(factory);
 

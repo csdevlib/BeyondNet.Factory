@@ -8,11 +8,11 @@ namespace BeyondNet.Factory.Interfaces
 
         TService[] Create<TTarget, TService>(TTarget target) where TService : class;
 
-        RecordSetupItem[] ConfigurationFor<TTarget, TService>(TTarget target, string name) where TService : class;
+        SetupItem[] ConfigurationFor<TTarget, TService>(TTarget target, string name) where TService : class;
 
-        RecordSetupItem[] ConfigurationFor<TTarget, TService>(TTarget target) where TService : class;
+        SetupItem[] ConfigurationFor<TTarget, TService>(TTarget target) where TService : class;
 
-        IFactoryRecordSetupProvider ConfigurationProvider { get; }
+        IFactorySetupProvider ConfigurationProvider { get; }
 
         IFactoryCreator Creator { get; }
 

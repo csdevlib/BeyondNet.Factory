@@ -4,7 +4,7 @@ using BeyondNet.Tests.Factory.Test.Models;
 
 namespace BeyondNet.Tests.Factory.Test.Impl
 {
-    public class FactoryRecordSetupSource : AbstractFactoryRecordSetupSource
+    public class FactoryRecordSetupSource : AbstractFactorySetupSource
     {
         public FactoryRecordSetupSource()
         {

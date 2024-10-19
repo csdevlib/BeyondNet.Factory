@@ -1,7 +1,5 @@
 ﻿using BeyondNet.Factory.Interfaces;
-using BeyondNet.ServiceLocator.Interfaces;
-
-
+using BeyondNet.Factory.Interfaces;
 
 namespace BeyondNet.Factory.Impl
 {

@@ -5,13 +5,13 @@ using BeyondNet.Factory.Fluent.Interfaces;
 
 namespace BeyondNet.Factory.Impl
 {
-    public abstract class AbstractFactoryRecordSetupSource : IFactoryRecordSetupSource
+    public abstract class AbstractFactorySetupSource : IFactorySetupSource
     {
-        protected readonly List<RecordSetupItem> Items = new List<RecordSetupItem>();
+        protected readonly List<SetupItem> Items = new List<SetupItem>();
 
-        public RecordSetup Source()
+        public Setup Source()
         {
-            var result = new RecordSetup();
+            var result = new Setup();
 
             foreach (var item in Items)
             {
@@ -23,9 +23,9 @@ namespace BeyondNet.Factory.Impl
 
         public IFactoryRecordSetupCreateBuilder<TTarget, TService> For<TTarget, TService>()
         {
-            var value = new RecordSetupItem(typeof(TTarget), typeof(TService), string.Empty);
+            var value = new SetupItem(typeof(TTarget), typeof(TService), string.Empty);
 
-            var descriptor = new FactoryRecordSetupCreateBuilder<TTarget, TService>(value);
+            var descriptor = new FactorySetupCreateBuilder<TTarget, TService>(value);
 
             Items.Add(value);
 
@@ -39,7 +39,7 @@ namespace BeyondNet.Factory.Impl
                 throw new ArgumentNullException(nameof(action));
             }
 
-            var descriptor = new FactoryRecordSetupGroupCreateBuilder<TTarget, TService>(Items, name);
+            var descriptor = new FactorySetupGroupCreateBuilder<TTarget, TService>(Items, name);
 
             action.Invoke(descriptor);
         }

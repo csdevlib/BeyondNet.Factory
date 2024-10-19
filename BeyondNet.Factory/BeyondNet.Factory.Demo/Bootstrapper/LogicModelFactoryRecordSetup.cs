@@ -5,7 +5,7 @@ using BeyondNet.Factory.Impl;
 
 namespace BeyondNet.Factory.Demo.Bootstrapper
 {
-    public class LogicModelFactoryRecordSetup : AbstractFactoryRecordSetupSource
+    public class LogicModelFactoryRecordSetup : AbstractFactorySetupSource
     {
         public LogicModelFactoryRecordSetup()
         {
